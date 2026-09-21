@@ -157,7 +157,9 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  background: url(../images/svg/arrow-left.svg) center no-repeat;
+  background-color: var(--color-text);
+  mask: url(../images/svg/arrow-left.svg) center no-repeat;
+  transition: background-color 0.3s ease-out;
 }
 
 .arrow__span--right {
@@ -168,7 +170,9 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  background: url(../images/svg/arrow-right.svg) center no-repeat;
+  background-color: var(--color-text);
+  mask: url(../images/svg/arrow-right.svg) center no-repeat;
+  transition: background-color 0.3s ease-out;
 }
 
 .favorites__slider {
@@ -321,12 +325,9 @@
     background-color: var(--color-text);
   }
 
-  .favorites__arrow:hover .arrow__span--left {
-    background: url(../images/svg/arrow-left-light.svg) center no-repeat;
-  }
-
+  .favorites__arrow:hover .arrow__span--left,
   .favorites__arrow:hover .arrow__span--right {
-    background: url(../images/svg/arrow-right-light.svg) center no-repeat;
+    background-color: var(--color-bg);
   }
 }
 
@@ -335,12 +336,9 @@
     background-color: var(--color-text);
   }
 
-  .favorites__arrow:active .arrow__span--left {
-    background: url(../images/svg/arrow-left-light.svg) center no-repeat;
-  }
-
+  .favorites__arrow:active .arrow__span--left,
   .favorites__arrow:active .arrow__span--right {
-    background: url(../images/svg/arrow-right-light.svg) center no-repeat;
+    background-color: var(--color-bg);
   }
 }
 
@@ -472,7 +470,9 @@
   display: inline-block;
   width: 3.6rem;
   height: 3.6rem;
-  background: url(../images/svg/android.svg);
+  background-color: var(--color-text);
+  mask: url(../images/svg/android.svg) center / contain no-repeat;
+  transition: background-color 0.3s ease-out;
 }
 
 .button__mobile--apple::before {
@@ -480,7 +480,9 @@
   display: inline-block;
   width: 3.6rem;
   height: 3.6rem;
-  background: url(../images/svg/apple.svg);
+  background-color: var(--color-text);
+  mask: url(../images/svg/apple.svg) center / contain no-repeat;
+  transition: background-color 0.3s ease-out;
   margin-right: 1rem;
 }
 
@@ -511,12 +513,9 @@
     color: var(--color-text-inverse);
   }
 
-  .button__mobile:hover .button__mobile--android::before {
-    background: url(../images/svg/google_light.svg);
-  }
-
+  .button__mobile:hover .button__mobile--android::before,
   .button__mobile:hover .button__mobile--apple::before {
-    background: url(../images/svg/apple-light.svg);
+    background-color: var(--color-text-inverse);
   }
 
   .about__gallery--item:hover .about-gallery__image {
@@ -530,12 +529,9 @@
     color: var(--color-text-inverse);
   }
 
-  .button__mobile:active .button__mobile--android::before {
-    background: url(../images/svg/google_light.svg);
-  }
-
+  .button__mobile:active .button__mobile--android::before,
   .button__mobile:active .button__mobile--apple::before {
-    background: url(../images/svg/apple-light.svg);
+    background-color: var(--color-text-inverse);
   }
 
   .about__gallery--item:active .about-gallery__image {

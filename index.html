@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Coffee-House</title>
+    <script>
+      if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.dataset.theme = "dark";
+      }
+    </script>
     <link rel="stylesheet" href="./styles/main.css" />
     <link rel="stylesheet" href="./styles/components/header.css" />
     <link rel="stylesheet" href="./styles/components/footer.css" />
@@ -18,22 +23,14 @@
       <div class="wrapper">
         <div class="header__wrapper">
           <div class="header__logo">
-            <a href="./">
-              <img
-                src="./images/svg/Logo.svg"
-                alt="Coffee-House logo"
-                class="header__logo--img"
-              />
+            <a href="./" aria-label="Coffee House, go to the main page">
+              <span class="header__logo--img"></span>
               <img
                 src="./images/svg/Ellipse.svg"
-                alt="Coffee-House logo circle"
+                alt=""
                 class="header__logo--circle"
               />
-              <img
-                src="./images/svg/CoffeeHouse.svg"
-                alt="Coffee-House logo text"
-                class="header__logo--text"
-              />
+              <span class="header__logo--text"></span>
             </a>
           </div>
           <nav class="header__nav">
@@ -53,20 +50,27 @@
                 <a href="#contacts" class="header__nav--link">Contact us</a>
               </li>
             </ul>
+          </nav>
+          <div class="header__controls">
+            <button
+              class="theme-toggle"
+              type="button"
+              aria-label="Toggle dark theme"
+              aria-pressed="false"
+            >
+              <span class="theme-toggle__option theme-toggle__option--light"></span>
+              <span class="theme-toggle__option theme-toggle__option--dark"></span>
+            </button>
             <div class="header__menu">
               <div class="header-menu__wrapper">
                 <a href="./menu.html" class="header-menu__link">Menu</a>
-                <img
-                  src="./images/svg/coffee-cup.svg"
-                  class="header-menu__icon"
-                  alt="open menu"
-                />
+                <span class="header-menu__icon"></span>
               </div>
             </div>
-          </nav>
-          <div class="burger-menu">
-            <span class="burger-menu__line"></span>
-            <span class="burger-menu__line"></span>
+            <div class="burger-menu">
+              <span class="burger-menu__line"></span>
+              <span class="burger-menu__line"></span>
+            </div>
           </div>
         </div>
       </div>
@@ -306,6 +310,7 @@
       </div>
     </footer>
     <script type="module" src="./scripts/carousel.js"></script>
+    <script src="./scripts/theme.js"></script>
     <script src="./scripts/burger.js"></script>
   </body>
 </html>
