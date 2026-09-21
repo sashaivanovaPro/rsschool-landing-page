@@ -2,7 +2,7 @@
 
 .footer__wrapper {
   padding: var(--main-padding);
-  background-color: var(--background-color-container);
+  background-color: var(--color-surface);
   border-radius: 4rem;
   margin-bottom: var(--main-margin);
   display: flex;
@@ -14,7 +14,7 @@
 }
 
 .footer__heading {
-  color: var(--text-color-light);
+  color: var(--color-text-inverse);
   margin-bottom: var(--main-margin);
   line-height: var(--h2-line-height);
 }
@@ -23,7 +23,7 @@
   display: inline-block;
   width: 5.8rem;
   height: 5.8rem;
-  border: 1px solid var(--border-light);
+  border: 1px solid var(--color-border);
   border-radius: 50%;
   margin-right: 1rem;
   transition: all 400ms ease-in-out;
@@ -46,7 +46,7 @@
   flex-direction: column;
   align-items: start;
   justify-content: center;
-  color: var(--text-color-light);
+  color: var(--color-text-inverse);
 }
 
 .footer-contacts__block:not(:last-child) {
@@ -55,7 +55,7 @@
 
 .footer__contacts--subheading {
   margin-bottom: var(--main-margin);
-  color: var(--text-color-light);
+  color: var(--color-text-inverse);
 }
 
 .footer__contacts--lines {
@@ -63,7 +63,7 @@
 }
 
 .footer__contacts--lines a {
-  color: var(--text-color-light);
+  color: var(--color-text-inverse);
   letter-spacing: 0.2px;
 }
 
@@ -76,7 +76,7 @@
 }
 
 .footer__contacts--lines {
-  color: var(--text-color-light);
+  color: var(--color-text-inverse);
   display: table;
 }
 
@@ -85,7 +85,7 @@
   display: block;
   height: 2px;
   width: 100%;
-  background-color: var(--text-color-light);
+  background-color: var(--color-text-inverse);
   transform: scale(0);
   transition: all 0.3s ease-out;
   margin-top: 0.4rem;
@@ -106,7 +106,7 @@
   display: block;
   height: 2px;
   width: 100%;
-  background-color: var(--text-color-light);
+  background-color: var(--color-text-inverse);
   transform: scale(0);
   transition: all 0.3s ease-out;
   margin-top: 0.4rem;
@@ -128,17 +128,17 @@
 @media (hover: hover) {
   .footer__links--item1:hover {
     background: url(../../images/svg/twitter-dark.svg) center no-repeat;
-    background-color: var(--background-color-body);
+    background-color: var(--color-bg);
   }
 
   .footer__links--item2:hover {
     background: url(../../images/svg/instagram-dark.svg) center no-repeat;
-    background-color: var(--background-color-body);
+    background-color: var(--color-bg);
   }
 
   .footer__links--item3:hover {
     background: url(../../images/svg/facebook-dark.svg) center no-repeat;
-    background-color: var(--background-color-body);
+    background-color: var(--color-bg);
   }
   .footer__contacts--line1:hover:after {
     transform: scale(1);
@@ -151,17 +151,17 @@
 @media (hover: none) {
   .footer__links--item1:active {
     background: url(../../images/svg/twitter-dark.svg) center no-repeat;
-    background-color: var(--background-color-body);
+    background-color: var(--color-bg);
   }
 
   .footer__links--item2:active {
     background: url(../../images/svg/instagram-dark.svg) center no-repeat;
-    background-color: var(--background-color-body);
+    background-color: var(--color-bg);
   }
 
   .footer__links--item3:active {
     background: url(../../images/svg/facebook-dark.svg) center no-repeat;
-    background-color: var(--background-color-body);
+    background-color: var(--color-bg);
   }
   .footer__contacts--line1:active:after {
     transform: scale(1);

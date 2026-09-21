@@ -1,19 +1,16 @@
 /* Variable declaration */
 
 :root {
-  /* Text colors  */
-  --text-color-light: #e1d4c9;
-  --text-color-dark: #403f3d;
-  --text-color-accent: #b0907a;
+  /* Colors */
+  --color-text: #403f3d;
+  --color-text-inverse: #e1d4c9;
+  --color-accent: #b0907a;
+  --color-bg: #e1d4c9;
+  --color-surface: #665f55;
+  --color-backdrop: #403f3dcc;
+  --color-border: #c1b6ad;
+  --color-border-strong: #665f55;
 
-  /* Background colors  */
-  --background-color-body: #e1d4c9;
-  --background-color-container: #665f55;
-  --background-color-backdrop: #403f3dcc;
-
-  /* Border colors  */
-  --border-light: #c1b6ad;
-  --border-dark: #665f55;
   --main-font-size: 1.6rem;
 
   /* Fonts  */

@@ -5,7 +5,7 @@
 /* Menu section desktop layout  */
 
 .menu__heading {
-  color: var(--text-color-dark);
+  color: var(--color-text);
   font-size: var(--h2-size);
   max-width: 60%;
   text-align: center;
@@ -25,7 +25,7 @@
   border-radius: 10rem;
   padding: 0.8rem;
   padding-right: 1.6rem;
-  border: 1px solid var(--border-light);
+  border: 1px solid var(--color-border);
   display: flex;
   gap: 0.8rem;
   align-items: center;
@@ -37,7 +37,7 @@
   width: 3rem;
   height: 3rem;
   border-radius: 10rem;
-  background-color: var(--border-light);
+  background-color: var(--color-border);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -55,7 +55,7 @@
 }
 
 .menu__gallery--item {
-  border: 1px solid var(--border-light);
+  border: 1px solid var(--color-border);
   border-radius: 4rem;
   transition: all 0.4s ease-in-out;
   cursor: pointer;
@@ -102,12 +102,12 @@
 
 @media (hover: hover) and (pointer: fine) {
   .menu__controls--button:hover {
-    background-color: var(--background-color-container);
-    color: var(--text-color-light);
+    background-color: var(--color-surface);
+    color: var(--color-text-inverse);
   }
 
   .menu__controls--button:hover .menu__image {
-    background-color: var(--background-color-body);
+    background-color: var(--color-bg);
   }
 
   .menu__gallery--item:hover .menu__gallery--image .menu-gallery__image {
@@ -118,12 +118,12 @@
 
 @media (hover: none) and (pointer: coarse) {
   .menu__controls--button:active {
-    background-color: var(--background-color-container);
-    color: var(--text-color-light);
+    background-color: var(--color-surface);
+    color: var(--color-text-inverse);
   }
 
   .menu__controls--button:active .menu__image {
-    background-color: var(--background-color-body);
+    background-color: var(--color-bg);
   }
 
   .menu__gallery--item:active .menu__gallery--image .menu-gallery__image {
@@ -133,12 +133,12 @@
 }
 
 .button-active {
-  background-color: var(--background-color-container);
-  color: var(--text-color-light);
+  background-color: var(--color-surface);
+  color: var(--color-text-inverse);
 }
 
 .image-active {
-  background-color: var(--background-color-body);
+  background-color: var(--color-bg);
 }
 
 /* Menu section hover effects END*/
@@ -180,7 +180,7 @@
     height: 6rem;
     border-radius: 50%;
     background: url(../images/svg/refresh.svg) center no-repeat;
-    border: 1px solid var(--text-color-dark);
+    border: 1px solid var(--color-text);
     margin-bottom: var(--section-margin);
     transition: all 0.3s ease-out;
   }
@@ -189,14 +189,14 @@
 @media (hover: hover) and (pointer: fine) {
   .menu-refresh:hover {
     background: url(../images/svg/refresh-light.svg) center no-repeat;
-    background-color: var(--text-color-dark);
+    background-color: var(--color-text);
   }
 }
 
 @media (hover: none) and (pointer: coarse) {
   .menu-refresh:active {
     background: url(../images/svg/refresh-light.svg) center no-repeat;
-    background-color: var(--text-color-dark);
+    background-color: var(--color-text);
   }
 }
 

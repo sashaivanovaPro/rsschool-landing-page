@@ -30,13 +30,13 @@
 
 .enjoy__block--paragraph {
   margin: var(--main-margin) 0px;
-  color: var(--text-color-light);
+  color: var(--color-text-inverse);
   font-weight: 300;
   letter-spacing: 0.1px;
 }
 
 .enjoy__block--button {
-  background-color: var(--background-color-body);
+  background-color: var(--color-bg);
   border-radius: 10rem;
   font-weight: var(--bold-weight);
   border: none;
@@ -131,7 +131,7 @@
   height: 6rem;
   flex-shrink: 0;
   border-radius: 50%;
-  border: 1px solid var(--text-color-dark);
+  border: 1px solid var(--color-text);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -234,7 +234,7 @@
   display: inline-block;
   width: 4rem;
   height: 0.4rem;
-  background-color: var(--border-light);
+  background-color: var(--color-border);
   border-radius: 10rem;
   margin-right: 0.8rem;
   position: relative;
@@ -250,7 +250,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-color: var(--border-dark);
+  background-color: var(--color-border-strong);
   transition: width 5s ease-out;
   z-index: 2;
 }
@@ -268,7 +268,7 @@
 }
 
 /* .controls__span:hover {
-  background-color: var(--border-dark);
+  background-color: var(--color-border-strong);
 } */
 
 .controls__span:last-child {
@@ -318,7 +318,7 @@
 
 @media (hover: hover) and (pointer: fine) {
   .favorites__arrow:hover {
-    background-color: var(--text-color-dark);
+    background-color: var(--color-text);
   }
 
   .favorites__arrow:hover .arrow__span--left {
@@ -332,7 +332,7 @@
 
 @media (hover: none) and (pointer: coarse) {
   .favorites__arrow:active {
-    background-color: var(--text-color-dark);
+    background-color: var(--color-text);
   }
 
   .favorites__arrow:active .arrow__span--left {
@@ -459,7 +459,7 @@
 .button__mobile {
   display: flex;
   padding: 1.2rem 2rem;
-  border: 1px solid var(--border-dark);
+  border: 1px solid var(--color-border-strong);
   border-radius: 10rem;
   width: 20rem;
   height: 6.4rem;
@@ -507,8 +507,8 @@
 
 @media (hover: hover) and (pointer: fine) {
   .button__mobile:hover {
-    background-color: var(--background-color-container);
-    color: var(--text-color-light);
+    background-color: var(--color-surface);
+    color: var(--color-text-inverse);
   }
 
   .button__mobile:hover .button__mobile--android::before {
@@ -526,8 +526,8 @@
 
 @media (hover: none) and (pointer: coarse) {
   .button__mobile:active {
-    background-color: var(--background-color-container);
-    color: var(--text-color-light);
+    background-color: var(--color-surface);
+    color: var(--color-text-inverse);
   }
 
   .button__mobile:active .button__mobile--android::before {

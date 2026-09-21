@@ -71,9 +71,9 @@ body {
   line-height: 1;
   font-family: var(--main-font-family);
   font-size: var(--main-font-size);
-  color: var(--text-color-dark);
+  color: var(--color-text);
   line-height: var(--main-line-height);
-  background-color: var(--background-color-body);
+  background-color: var(--color-bg);
 }
 
 h1,
@@ -85,7 +85,7 @@ h3 {
 h1 {
   font-size: var(--h1-size);
   line-height: var(--h1-line-height);
-  color: var(--text-color-light);
+  color: var(--color-text-inverse);
 }
 
 h2 {
@@ -99,14 +99,14 @@ h3 {
 }
 
 .span {
-  color: var(--text-color-accent);
+  color: var(--color-accent);
   font-style: italic;
   font-variation-settings: "slnt" 0;
   font-feature-settings: "clig" 0, "liga" 0;
 }
 a {
   text-decoration: none;
-  color: var(--text-color-dark);
+  color: var(--color-text);
 }
 
 ol,
@@ -115,7 +115,7 @@ ul {
 }
 
 button {
-  color: var(--text-color-dark);
+  color: var(--color-text);
   font-family: var(--main-font-family);
   font-size: var(--main-font-size);
   line-height: var(--main-line-height);
