@@ -56,6 +56,7 @@
 
 .menu__gallery--item {
   border: 1px solid var(--color-border);
+  background-color: var(--color-card);
   border-radius: 4rem;
   transition: all 0.4s ease-in-out;
   cursor: pointer;
@@ -179,24 +180,42 @@
     width: 6rem;
     height: 6rem;
     border-radius: 50%;
-    background: url(../images/svg/refresh.svg) center no-repeat;
+    position: relative;
     border: 1px solid var(--color-text);
     margin-bottom: var(--section-margin);
     transition: all 0.3s ease-out;
+  }
+
+  .menu-refresh::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 24px;
+    height: 24px;
+    background-color: var(--color-text);
+    mask: url(../images/svg/refresh.svg) center / contain no-repeat;
+    transition: background-color 0.3s ease-out;
   }
 }
 
 @media (hover: hover) and (pointer: fine) {
   .menu-refresh:hover {
-    background: url(../images/svg/refresh-light.svg) center no-repeat;
     background-color: var(--color-text);
+  }
+
+  .menu-refresh:hover::before {
+    background-color: var(--color-bg);
   }
 }
 
 @media (hover: none) and (pointer: coarse) {
   .menu-refresh:active {
-    background: url(../images/svg/refresh-light.svg) center no-repeat;
     background-color: var(--color-text);
+  }
+
+  .menu-refresh:active::before {
+    background-color: var(--color-bg);
   }
 }
 

@@ -1,12 +1,15 @@
 /* Variable declaration */
 
 :root {
+  color-scheme: light;
+
   /* Colors */
   --color-text: #403f3d;
   --color-text-inverse: #e1d4c9;
   --color-accent: #b0907a;
   --color-bg: #e1d4c9;
   --color-surface: #665f55;
+  --color-card: #e1d4c9;
   --color-backdrop: #403f3dcc;
   --color-border: #c1b6ad;
   --color-border-strong: #665f55;
@@ -55,4 +58,17 @@
   --gap-main: 4rem;
   --gap-small: 1.6rem;
   --gap-burger: 5.55rem;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-text: #e1d4c9;
+  --color-text-inverse: #e1d4c9;
+  --color-bg: #292826;
+  --color-surface: #403f3d;
+  --color-card: #403f3d;
+  --color-backdrop: #292826cc;
+  --color-border: #665f55;
+  --color-border-strong: #c1b6ad;
 }
