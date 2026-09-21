@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coffee-House</title>
     <script>
       if (localStorage.getItem("theme") === "dark") {
         document.documentElement.dataset.theme = "dark";
       }
     </script>
-    <link rel="stylesheet" href="./styles/menu.css" />
-    <link rel="stylesheet" href="./styles/components/header.css" />
-    <link rel="stylesheet" href="./styles/components/footer.css" />
+    <link rel="stylesheet" href="./styles/menu.css">
+    <link rel="stylesheet" href="./styles/components/header.css">
+    <link rel="stylesheet" href="./styles/components/footer.css">
     <link
       rel="shortcut icon"
       href="./images/png/favicon.png"
-      type="image/x-icon"
-    />
+      type="image/x-icon">
   </head>
   <body>
     <header>
@@ -28,8 +27,7 @@
               <img
                 src="./images/svg/Ellipse.svg"
                 alt=""
-                class="header__logo--circle"
-              />
+                class="header__logo--circle">
               <span class="header__logo--text"></span>
             </a>
           </div>
@@ -75,49 +73,48 @@
         </div>
       </div>
     </header>
-    <section class="menu">
-      <div class="wrapper">
-        <h1 class="menu__heading">
-          Behind each of our cups hides an<span class="span">
-            amazing surprise</span
-          >
-        </h1>
-        <div class="menu__controls">
-          <div class="menu__controls--button" id="coffee">
-            <div class="menu__image">
-              <img
-                src="./images/png/coffe.png"
-                alt="coffee category button"
-                class="menu__image--logo"
-              />
+    <main>
+      <section class="menu">
+        <div class="wrapper">
+          <h1 class="menu__heading">
+            Behind each of our cups hides an<span class="span">
+              amazing surprise</span
+            >
+          </h1>
+          <div class="menu__controls">
+            <div class="menu__controls--button" id="coffee">
+              <div class="menu__image">
+                <img
+                  src="./images/png/coffe.png"
+                  alt="coffee category button"
+                  class="menu__image--logo">
+              </div>
+              <p class="menu__controls--title">Coffee</p>
             </div>
-            <p class="menu__controls--title">Coffee</p>
-          </div>
-          <div class="menu__controls--button" id="tea">
-            <div class="menu__image">
-              <img
-                src="./images/png/tea.png"
-                alt="tea category button"
-                class="menu__image--logo"
-              />
+            <div class="menu__controls--button" id="tea">
+              <div class="menu__image">
+                <img
+                  src="./images/png/tea.png"
+                  alt="tea category button"
+                  class="menu__image--logo">
+              </div>
+              <p class="menu__controls--title">Tea</p>
             </div>
-            <p class="menu__controls--title">Tea</p>
-          </div>
-          <div class="menu__controls--button" id="dessert">
-            <div class="menu__image">
-              <img
-                src="./images/png/desert.png"
-                alt="dessert category button"
-                class="menu__image--logo"
-              />
+            <div class="menu__controls--button" id="dessert">
+              <div class="menu__image">
+                <img
+                  src="./images/png/desert.png"
+                  alt="dessert category button"
+                  class="menu__image--logo">
+              </div>
+              <p class="menu__controls--title">Dessert</p>
             </div>
-            <p class="menu__controls--title">Dessert</p>
           </div>
+          <div class="menu__gallery"></div>
+          <div class="menu-refresh"></div>
         </div>
-        <div class="menu__gallery"></div>
-        <div class="menu-refresh"></div>
-      </div>
-    </section>
+      </section>
+    </main>
     <footer id="contacts">
       <div class="wrapper">
         <div class="footer__wrapper">
