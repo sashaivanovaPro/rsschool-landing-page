@@ -1,0 +1,588 @@
+@import url(./variables.css);
+@import url(./settings.css);
+@import url(./fonts.css);
+
+/* Enjoy section desktop  START*/
+
+.enjoy__wrapper {
+  padding: var(--main-padding);
+  /* background: url(../images/jpeg/coffee_main.jpeg) center no-repeat; */
+  border-radius: 4rem;
+  background-size: cover;
+  margin-bottom: var(--section-margin);
+  position: relative;
+  overflow: hidden;
+}
+
+.enjoy-video {
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.enjoy__block {
+  max-width: 53rem;
+}
+
+.enjoy__block--paragraph {
+  margin: var(--main-margin) 0px;
+  color: var(--text-color-light);
+  font-weight: 300;
+  letter-spacing: 0.1px;
+}
+
+.enjoy__block--button {
+  background-color: var(--background-color-body);
+  border-radius: 10rem;
+  font-weight: var(--bold-weight);
+  border: none;
+  cursor: pointer;
+  width: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.enjoy-block__icon {
+  display: block;
+  width: 0;
+  margin-bottom: 2px;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .enjoy__block--button:hover .enjoy-block__icon {
+    width: 2rem;
+    margin-left: 0.8rem;
+    transform: scaleX(1);
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .enjoy__block--button .enjoy-block__icon {
+    width: 2rem;
+    margin-left: 0.8rem;
+    transform: scaleX(1);
+  }
+}
+
+/* Enjoy section desktop END*/ /* Enjoy section laptop START */
+@media screen and (max-width: 1024.98px) {
+  .enjoy__block {
+    max-width: 85%;
+  }
+}
+
+/* Enjoy section laptop END */
+
+/* Enjoy section landscape tablet START */
+
+@media screen and (max-width: 991.98px) {
+  .enjoy__block {
+    max-width: 98%;
+  }
+}
+
+/* Enjoy section landscape tablet END */
+
+/* Enjoy section tablet START */
+
+@media screen and (max-width: 768.98px) {
+  .enjoy__wrapper {
+    padding: var(--main-padding) var(--tablet-padding);
+  }
+}
+
+/* Enjoy section tablet END */
+
+/* Enjoy section mobile version START */
+
+@media (max-width: 575.98px) {
+  .enjoy__wrapper {
+    padding: 6rem 1.5rem;
+  }
+
+  .enjoy__block--paragraph {
+    letter-spacing: normal;
+  }
+}
+
+/* Enjoy section mobile version END */
+
+/* Favorites section desktop START*/
+
+.favorites {
+  margin-bottom: var(--section-margin);
+}
+
+.favorites__heading {
+  text-align: center;
+  margin-bottom: var(--main-margin);
+}
+
+.favorites__arrow {
+  width: 6rem;
+  height: 6rem;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1px solid var(--text-color-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-bottom: 4.5rem;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+.arrow-prev {
+  margin-right: 4rem;
+}
+
+.arrow-next {
+  margin-left: 4rem;
+}
+
+.arrow__span--left {
+  content: "";
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background: url(../images/svg/arrow-left.svg) center no-repeat;
+}
+
+.arrow__span--right {
+  content: "";
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background: url(../images/svg/arrow-right.svg) center no-repeat;
+}
+
+.favorites__slider {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.favorites__carousel {
+  /* display: flex; */
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider-line {
+  display: flex;
+  width: calc(100vw - 280px);
+  position: relative;
+  left: 0;
+  transition: all 1s ease-in-out;
+}
+
+.carousel__image {
+  width: 100%;
+  height: 48rem;
+  background-size: cover;
+  margin-bottom: var(--small-margin);
+}
+
+.carousel__image1 {
+  background: url(../images/png/coffee-slider-1.png) center no-repeat;
+}
+
+.carousel__image2 {
+  background: url(../images/png/coffee-slider-2.png) center no-repeat;
+}
+
+.carousel__image3 {
+  background: url(../images/png/coffee-slider-3.png) center no-repeat;
+}
+
+.carousel__description {
+  display: flex;
+  gap: var(--gap-small);
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.favorites__description--text {
+  text-align: center;
+}
+
+.favorites__description--price {
+  font-size: var(--h3-size);
+  font-weight: var(--bold-weight);
+  margin-bottom: 1rem;
+  line-height: var(--h2-line-height);
+}
+
+.controls__span {
+  content: "";
+  display: inline-block;
+  width: 4rem;
+  height: 0.4rem;
+  background-color: var(--border-light);
+  border-radius: 10rem;
+  margin-right: 0.8rem;
+  position: relative;
+  z-index: -1;
+}
+
+.controls__span-double {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0.4rem;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--border-dark);
+  transition: width 5s ease-out;
+  z-index: 2;
+}
+
+.color-active {
+  width: 4rem;
+}
+
+.none {
+  display: none;
+}
+
+.favorites__descriptions--controles {
+  text-align: center;
+}
+
+/* .controls__span:hover {
+  background-color: var(--border-dark);
+} */
+
+.controls__span:last-child {
+  margin-right: 0;
+}
+
+/* Favorite section desktop layout END*/
+
+/* Favorite section mobile layout START*/
+
+@media (max-width: 700.98px) {
+  .favorites__arrow {
+    display: none;
+  }
+  .favorites__slider {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .carousel__image {
+    height: 44.8rem;
+  }
+
+  .carousel__image1 {
+    background: url(../images/png/coffee-slider-1-348.png) center no-repeat;
+  }
+  .carousel__image2 {
+    background: url(../images/png/coffee-slider-2-348.png) center no-repeat;
+  }
+  .carousel__image3 {
+    background: url(../images/png/coffee-slider-3-348.png) center no-repeat;
+  }
+}
+
+@media (max-width: 425.98px) {
+  .slider-line {
+    width: calc(100vw - 32px);
+  }
+  .carousel__image {
+    height: 34.8rem;
+  }
+}
+
+/* Favorite section mobile layout END*/
+
+/* Favorite section hover effects START*/
+
+@media (hover: hover) and (pointer: fine) {
+  .favorites__arrow:hover {
+    background-color: var(--text-color-dark);
+  }
+
+  .favorites__arrow:hover .arrow__span--left {
+    background: url(../images/svg/arrow-left-light.svg) center no-repeat;
+  }
+
+  .favorites__arrow:hover .arrow__span--right {
+    background: url(../images/svg/arrow-right-light.svg) center no-repeat;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .favorites__arrow:active {
+    background-color: var(--text-color-dark);
+  }
+
+  .favorites__arrow:active .arrow__span--left {
+    background: url(../images/svg/arrow-left-light.svg) center no-repeat;
+  }
+
+  .favorites__arrow:active .arrow__span--right {
+    background: url(../images/svg/arrow-right-light.svg) center no-repeat;
+  }
+}
+
+/* Favorite section hover effects END*/
+
+/* About section desktop layout START*/
+
+.about {
+  margin-bottom: var(--section-margin);
+}
+
+.about__heading {
+  margin-bottom: var(--main-margin);
+  margin-top: -0.6rem;
+}
+
+.about__gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 43rem 12rem 43rem;
+  gap: var(--gap-main);
+}
+
+.about__gallery--item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  border-radius: 2rem;
+}
+
+.about-gallery__image {
+  max-width: 72rem;
+  transform: scale(1.02);
+  transition: transform 0.3s ease-out;
+}
+
+.about__gallery--item1 {
+  grid-row: 1/3;
+}
+
+.about__gallery--item4 {
+  grid-row: 2/4;
+}
+
+/* About section desktop layout */
+
+/* About section tablet START */
+
+@media screen and (max-width: 768.98px) {
+  .about__gallery {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-main);
+  }
+
+  .about__gallery--item {
+    max-width: 100%;
+    height: 59rem;
+    pointer-events: none;
+    background-size: cover;
+  }
+
+  .about__gallery--item2,
+  .about__gallery--item3 {
+    display: none;
+  }
+}
+
+/* About section tablet END */
+
+/* Mobile section desktop START*/
+
+.mobile {
+  margin-bottom: var(--section-margin);
+}
+
+.mobile__wrapper {
+  display: flex;
+  flex: 1 1;
+  gap: var(--gap-section);
+  justify-content: space-between;
+}
+
+.mobile__box--left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 45%;
+  gap: var(--gap-main);
+}
+
+.mobile__box--right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 63rem;
+}
+
+.mobile-box__image {
+  max-width: 100%;
+}
+
+.buttons--description {
+  font-size: 1rem;
+  font-weight: var(--bold-weight);
+  line-height: 140%;
+}
+
+.mobile__box--buttons {
+  display: flex;
+}
+
+.button__mobile {
+  display: flex;
+  padding: 1.2rem 2rem;
+  border: 1px solid var(--border-dark);
+  border-radius: 10rem;
+  width: 20rem;
+  height: 6.4rem;
+  cursor: pointer;
+  /* transition: all 0.3s ease-in-out; */
+}
+
+.button__mobile--android::before {
+  content: "";
+  display: inline-block;
+  width: 3.6rem;
+  height: 3.6rem;
+  background: url(../images/svg/android.svg);
+}
+
+.button__mobile--apple::before {
+  content: "";
+  display: inline-block;
+  width: 3.6rem;
+  height: 3.6rem;
+  background: url(../images/svg/apple.svg);
+  margin-right: 1rem;
+}
+
+.button__mobile:first-child {
+  margin-right: var(--small-margin);
+}
+
+.button__mobile--android {
+  margin-right: 0.8rem;
+}
+
+.buttons--title {
+  font-weight: var(--bold-weight);
+}
+
+.button__text--wrapper {
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* Mobile section desktop START*/
+
+/* Mobile section hover effects START*/
+
+@media (hover: hover) and (pointer: fine) {
+  .button__mobile:hover {
+    background-color: var(--background-color-container);
+    color: var(--text-color-light);
+  }
+
+  .button__mobile:hover .button__mobile--android::before {
+    background: url(../images/svg/google_light.svg);
+  }
+
+  .button__mobile:hover .button__mobile--apple::before {
+    background: url(../images/svg/apple-light.svg);
+  }
+
+  .about__gallery--item:hover .about-gallery__image {
+    transform: scale(1);
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .button__mobile:active {
+    background-color: var(--background-color-container);
+    color: var(--text-color-light);
+  }
+
+  .button__mobile:active .button__mobile--android::before {
+    background: url(../images/svg/google_light.svg);
+  }
+
+  .button__mobile:active .button__mobile--apple::before {
+    background: url(../images/svg/apple-light.svg);
+  }
+
+  .about__gallery--item:active .about-gallery__image {
+    transform: scale(1);
+  }
+}
+
+/* Mobile section hover effects END*/
+
+/* Mobile section tablet layout START*/
+@media screen and (max-width: 991.98px) {
+  .mobile__wrapper {
+    flex-direction: column;
+  }
+
+  .mobile__box--right {
+    margin: 0 auto;
+  }
+
+  .mobile__box--left {
+    max-width: 80%;
+  }
+}
+
+@media screen and (max-width: 768.98px) {
+  .mobile__box--left {
+    max-width: 100%;
+  }
+}
+
+/* Mobile section tablet layout END*/
+
+/* Mobile section mobile layout START*/
+
+@media screen and (max-width: 425.98px) {
+  .mobile__box--buttons {
+    display: block;
+  }
+
+  .button__mobile:first-child {
+    margin: 0;
+    margin-bottom: 2rem;
+  }
+
+  .mobile__wrapper {
+    gap: var(--gap-main);
+  }
+}
+
+/* Mobile section mobile layout END*/
