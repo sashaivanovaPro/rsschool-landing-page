@@ -189,10 +189,14 @@
 
 .slider-line {
   display: flex;
-  width: calc(100vw - 280px);
+  width: 100%;
   position: relative;
   left: 0;
   transition: all 1s ease-in-out;
+}
+
+.slider-item {
+  flex: 0 0 100%;
 }
 
 .carousel__image {
@@ -308,9 +312,6 @@
 }
 
 @media (max-width: 425.98px) {
-  .slider-line {
-    width: calc(100vw - 32px);
-  }
   .carousel__image {
     height: 34.8rem;
   }
