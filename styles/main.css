@@ -496,6 +496,8 @@
 }
 
 .buttons--title {
+  font-size: var(--main-font-size);
+  line-height: 140%;
   font-weight: var(--bold-weight);
 }
 
