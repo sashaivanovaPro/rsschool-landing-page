@@ -49,6 +49,9 @@
 
 .enjoy-block__icon {
   display: block;
+  height: 2rem;
+  background-color: var(--color-text);
+  mask: url(../images/svg/coffee-cup.svg) center / contain no-repeat;
   width: 0;
   margin-bottom: 2px;
   transform: scaleX(0);
