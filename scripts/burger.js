@@ -12,8 +12,6 @@ const NAVLINKS = document.querySelectorAll(".header__nav--item");
 
 const MENU_BUTTON = document.querySelector(".header-menu__link");
 
-// console.log(NAVLINKS);
-
 const burgerIconClick = () => {
   MENU.classList.toggle("header__nav--active");
   BODY.classList.toggle("hidden");

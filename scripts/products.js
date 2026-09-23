@@ -729,16 +729,11 @@ const productsObject = [
   },
 ];
 
-console.log(productsObject);
-console.log(productsObject.length);
-console.log(productsObject[1].name);
-
 // export default productsObject;
 
 // Main container for placing menu
 
 const MENU = document.querySelector(".menu__gallery");
-console.log(MENU);
 
 // Render menu content
 
@@ -756,6 +751,7 @@ const renderMenu = (id) => {
       const image = document.createElement("img");
       image.classList.add("menu-gallery__image");
       image.src = productsObject[i].src;
+      image.alt = productsObject[i].name;
 
       const textDiv = document.createElement("div");
       textDiv.classList.add("menu__gallery--description");

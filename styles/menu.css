@@ -49,7 +49,6 @@
 .menu__gallery {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  /* grid-template-rows: repeat(2, 1fr); */
   gap: var(--gap-main);
   margin-bottom: var(--section-margin);
 }

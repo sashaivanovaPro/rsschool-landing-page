@@ -3,7 +3,6 @@
 let offset = 0;
 
 const SLIDER_LINE = document.querySelector(".slider-line");
-console.log(SLIDER_LINE);
 const NEXT = document.querySelector(".arrow-next");
 const PREV = document.querySelector(".arrow-prev");
 
@@ -14,8 +13,6 @@ const IMAGE_WIDTH = CAROUSEL.offsetWidth;
 const CONTROLS = document.querySelectorAll(".controls__span-double");
 
 let sliderCount = 0;
-
-// console.log(CONTROLS);
 
 // Change image width inside slider according to monitor size
 
@@ -60,7 +57,6 @@ NEXT.addEventListener("click", () => {
 
 const prevSlide = () => {
   offset -= IMAGE_WIDTH;
-  // sliderCount -= 1;
   if (offset < 0) {
     offset = IMAGE_WIDTH * 2;
   }
@@ -70,7 +66,5 @@ const prevSlide = () => {
 PREV.addEventListener("click", () => {
   prevSlide();
 });
-
-// console.log(CAROUSEL.offsetWidth);
 
 const moveCarousel = setInterval(() => nextSlide(), 5000);

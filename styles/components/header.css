@@ -286,7 +286,6 @@
     width: 16px;
     height: 1.5px;
     background-color: var(--color-text);
-    /* top: calc(50% - 1px); */
     transition: all 0.3s ease-out;
   }
 
@@ -305,23 +304,3 @@
     align-self: center;
   }
 }
-
-/* .burger__move {
-    position: fixed;
-    top: 3.6rem;
-    right: 2.5rem;
-  }
-
-  .burger-menu__line {
-    display: none;
-  }
-
-  
-
-
-}
-
-/* Mobile version of header  */
-
-/* @media (max-width: 425.98px) {
-} */
