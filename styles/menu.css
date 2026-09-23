@@ -87,6 +87,8 @@
 
 .menu__coffee--title {
   margin-bottom: 1.2rem;
+  font-size: var(--h3-size);
+  line-height: var(--h2-line-height);
 }
 
 .menu__coffee--price {
