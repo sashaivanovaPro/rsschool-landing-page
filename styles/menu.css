@@ -1,0 +1,233 @@
+@import url(./variables.css);
+@import url(./settings.css);
+@import url(./fonts.css);
+
+/* Menu section desktop layout  */
+
+.menu__heading {
+  color: var(--color-text);
+  font-size: var(--h2-size);
+  max-width: 60%;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: var(--main-margin);
+  line-height: var(--h2-line-height);
+}
+
+.menu__controls {
+  display: flex;
+  justify-content: center;
+  gap: var(--gap-small);
+  margin-bottom: var(--main-margin);
+}
+
+.menu__controls--button {
+  border-radius: 10rem;
+  padding: 0.8rem;
+  padding-right: 1.6rem;
+  border: 1px solid var(--color-border);
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+.menu__image {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 10rem;
+  background-color: var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-out;
+}
+
+/* Menu gallery desktop layout  */
+
+.menu__gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--gap-main);
+  margin-bottom: var(--section-margin);
+}
+
+.menu__gallery--item {
+  border: 1px solid var(--color-border);
+  background-color: var(--color-card);
+  border-radius: 4rem;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+  max-width: 31rem;
+}
+
+.menu__gallery--image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 4rem;
+}
+
+.menu-gallery__image {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  transform: scale(1.02);
+  transition: transform 0.3s ease-out;
+}
+
+.menu__gallery--description {
+  padding: var(--small-padding);
+  height: 19.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu__coffee--title {
+  margin-bottom: 1.2rem;
+  font-size: var(--h3-size);
+  line-height: var(--h2-line-height);
+}
+
+.menu__coffee--price {
+  font-size: var(--h3-size);
+  font-weight: var(--bold-weight);
+  line-height: var(--h2-line-height);
+}
+
+.menu-refresh {
+  display: none;
+}
+
+/* Menu section hover effects START*/
+
+@media (hover: hover) and (pointer: fine) {
+  .menu__controls--button:hover {
+    background-color: var(--color-surface);
+    color: var(--color-text-inverse);
+  }
+
+  .menu__controls--button:hover .menu__image {
+    background-color: var(--color-bg);
+  }
+
+  .menu__gallery--item:hover .menu__gallery--image .menu-gallery__image {
+    cursor: pointer;
+    transform: scale(1);
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .menu__controls--button:active {
+    background-color: var(--color-surface);
+    color: var(--color-text-inverse);
+  }
+
+  .menu__controls--button:active .menu__image {
+    background-color: var(--color-bg);
+  }
+
+  .menu__gallery--item:active .menu__gallery--image .menu-gallery__image {
+    cursor: pointer;
+    transform: scale(1);
+  }
+}
+
+.button-active {
+  background-color: var(--color-surface);
+  color: var(--color-text-inverse);
+}
+
+.image-active {
+  background-color: var(--color-bg);
+}
+
+/* Menu section hover effects END*/
+
+/* Menu section tablet layout START*/
+
+@media screen and (max-width: 1199.98px) {
+  .menu__heading {
+    max-width: 100%;
+  }
+  .menu__gallery {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--main-margin);
+  }
+
+  .menu__gallery--item {
+    max-width: 31rem;
+  }
+
+  .menu__gallery--item:nth-child(5),
+  .menu__gallery--item:nth-child(6) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 991.98px) {
+  .menu__gallery--item:nth-child(7),
+  .menu__gallery--item:nth-child(8) {
+    display: none;
+  }
+
+  .menu-refresh {
+    display: block;
+    margin: 0 auto;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    position: relative;
+    border: 1px solid var(--color-text);
+    margin-bottom: var(--section-margin);
+    transition: all 0.3s ease-out;
+  }
+
+  .menu-refresh::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 24px;
+    height: 24px;
+    background-color: var(--color-text);
+    mask: url(../images/svg/refresh.svg) center / contain no-repeat;
+    transition: background-color 0.3s ease-out;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .menu-refresh:hover {
+    background-color: var(--color-text);
+  }
+
+  .menu-refresh:hover::before {
+    background-color: var(--color-bg);
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .menu-refresh:active {
+    background-color: var(--color-text);
+  }
+
+  .menu-refresh:active::before {
+    background-color: var(--color-bg);
+  }
+}
+
+@media (max-width: 425.98px) {
+  .menu__heading {
+    font-size: var(--h2-mobile-size);
+  }
+
+  .menu__controls {
+    gap: 0.8rem;
+  }
+}

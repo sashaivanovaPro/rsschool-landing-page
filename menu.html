@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee-House</title>
+    <script>
+      if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.dataset.theme = "dark";
+      }
+    </script>
+    <link rel="stylesheet" href="./styles/menu.css">
+    <link rel="stylesheet" href="./styles/components/header.css">
+    <link rel="stylesheet" href="./styles/components/footer.css">
+    <link
+      rel="shortcut icon"
+      href="./images/png/favicon.png"
+      type="image/x-icon">
+  </head>
+  <body>
+    <header>
+      <div class="wrapper">
+        <div class="header__wrapper">
+          <div class="header__logo">
+            <a href="./" aria-label="Coffee House, go to the main page">
+              <span class="header__logo--img"></span>
+              <img
+                src="./images/svg/Ellipse.svg"
+                alt=""
+                class="header__logo--circle">
+              <span class="header__logo--text"></span>
+            </a>
+          </div>
+          <nav class="header__nav">
+            <ul class="header__nav--list">
+              <li class="header__nav--item">
+                <a href="./#favorites" class="header__nav--link"
+                  >Favorite coffee</a
+                >
+              </li>
+              <li class="header__nav--item">
+                <a href="./#about" class="header__nav--link">About</a>
+              </li>
+              <li class="header__nav--item">
+                <a href="./#mobile" class="header__nav--link">Mobile app</a>
+              </li>
+              <li class="header__nav--item">
+                <a href="#contacts" class="header__nav--link">Contact us</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="header__controls">
+            <button
+              class="theme-toggle"
+              type="button"
+              aria-label="Toggle dark theme"
+              aria-pressed="false"
+            >
+              <span class="theme-toggle__option theme-toggle__option--light"></span>
+              <span class="theme-toggle__option theme-toggle__option--dark"></span>
+            </button>
+            <div class="header__menu">
+              <div class="header-menu__wrapper">
+                <a href="./menu.html" class="header-menu__link">Menu</a>
+                <span class="header-menu__icon"></span>
+              </div>
+            </div>
+            <div class="burger-menu">
+              <span class="burger-menu__line"></span>
+              <span class="burger-menu__line"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="menu">
+        <div class="wrapper">
+          <h1 class="menu__heading">
+            Behind each of our cups hides an<span class="span">
+              amazing surprise</span
+            >
+          </h1>
+          <div class="menu__controls">
+            <div class="menu__controls--button" id="coffee">
+              <div class="menu__image">
+                <img
+                  src="./images/png/coffe.png"
+                  alt="coffee category button"
+                  class="menu__image--logo">
+              </div>
+              <p class="menu__controls--title">Coffee</p>
+            </div>
+            <div class="menu__controls--button" id="tea">
+              <div class="menu__image">
+                <img
+                  src="./images/png/tea.png"
+                  alt="tea category button"
+                  class="menu__image--logo">
+              </div>
+              <p class="menu__controls--title">Tea</p>
+            </div>
+            <div class="menu__controls--button" id="dessert">
+              <div class="menu__image">
+                <img
+                  src="./images/png/desert.png"
+                  alt="dessert category button"
+                  class="menu__image--logo">
+              </div>
+              <p class="menu__controls--title">Dessert</p>
+            </div>
+          </div>
+          <h2 class="menu__category visually-hidden">Coffee menu</h2>
+          <div class="menu__gallery"></div>
+          <div class="menu-refresh"></div>
+        </div>
+      </section>
+    </main>
+    <footer id="contacts">
+      <div class="wrapper">
+        <div class="footer__wrapper">
+          <div class="footer__wrapper--left">
+            <h2 class="footer__heading">
+              Sip, Savor, Smile.<span class="mobile__span span">
+                It&#39;s coffee time!</span
+              >
+            </h2>
+            <div class="footer__links">
+              <a
+                href="https://twitter.com/x"
+                class="footer__links--items footer__links--item1"
+                target="_blank"
+              ></a>
+              <a
+                href="https://www.instagram.com/"
+                class="footer__links--items footer__links--item2"
+                target="_blank"
+              ></a>
+              <a
+                href="https://www.facebook.com/"
+                class="footer__links--items footer__links--item3"
+                target="_blank"
+              ></a>
+            </div>
+          </div>
+          <div class="footer__wrapper--right">
+            <h3 class="footer__contacts--subheading">Contact us</h3>
+            <ul class="footer__contacts--list">
+              <li class="footer-contacts__block">
+                <a
+                  href="https://maps.app.goo.gl/nyrMf2LgFc1mcsVa6"
+                  class="footer__contacts--lines footer__contacts--line1"
+                  target="_blank"
+                  >8558 Green Rd., LA</a
+                >
+              </li>
+              <li class="footer-contacts__block">
+                <a
+                  href="tel:+16035550123"
+                  class="footer__contacts--lines footer__contacts--line2"
+                  >+1 (603) 555-0123</a
+                >
+              </li>
+              <li class="footer-contacts__block">
+                <span class="footer__contacts--lines footer__contacts--line3"
+                  >Mon-Sat: 9:00 AM – 23:00 PM</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="./scripts/theme.js"></script>
+    <script src="./scripts/burger.js"></script>
+    <script type="module" src="./scripts/products.js"></script>
+  </body>
+</html>

@@ -1,0 +1,174 @@
+/* Main settings */
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+u,
+ol,
+ul,
+li,
+form,
+label,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+  font-family: var(--main-font-family);
+  font-size: var(--main-font-size);
+  color: var(--color-text);
+  line-height: var(--main-line-height);
+  background-color: var(--color-bg);
+}
+
+h1,
+h2,
+h3 {
+  font-weight: var(--bold-weight);
+}
+
+h1 {
+  font-size: var(--h1-size);
+  line-height: var(--h1-line-height);
+  color: var(--color-text-inverse);
+}
+
+h2 {
+  font-size: var(--h2-size);
+  line-height: var(--h2-line-height);
+}
+
+h3 {
+  font-size: var(--h3-size);
+  line-height: var(--h2-line-height);
+}
+
+.span {
+  color: var(--color-accent);
+  font-style: italic;
+  font-variation-settings: "slnt" 0;
+  font-feature-settings: "clig" 0, "liga" 0;
+}
+a {
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+button {
+  color: var(--color-text);
+  font-family: var(--main-font-family);
+  font-size: var(--main-font-size);
+  line-height: var(--main-line-height);
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.wrapper {
+  max-width: 144rem;
+  padding: 0 var(--middle-padding);
+  margin: 0 auto;
+}
+
+/* Mobile version settings  */
+
+@media (max-width: 575.98px) {
+  .wrapper {
+    padding: 0 1.6rem;
+  }
+
+  h1 {
+    font-size: var(--h1-mobile-size);
+    line-height: var(--h1-mobile-line-height);
+  }
+
+  h2 {
+    font-size: var(--h2-mobile-size);
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

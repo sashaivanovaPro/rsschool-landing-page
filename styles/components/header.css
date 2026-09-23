@@ -1,0 +1,306 @@
+/* Header desktop */
+
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--small-padding) 0;
+  font-weight: var(--bold-weight);
+}
+
+.header__logo {
+  width: 100px;
+  height: 60px;
+  position: relative;
+  text-align: center;
+}
+
+.header__logo--img {
+  display: inline-block;
+  width: 93px;
+  height: 23px;
+  margin: 12.56px 3.2px 0 4.25px;
+  background-color: var(--color-text);
+  mask: url(../../images/svg/Logo.svg) center / contain no-repeat;
+}
+
+.header__logo--circle {
+  position: absolute;
+  z-index: -1;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 38px;
+  height: 38px;
+}
+
+.header__logo--text {
+  display: inline-block;
+  width: 66px;
+  height: 7px;
+  margin-bottom: 4px;
+  background-color: var(--color-text);
+  mask: url(../../images/svg/CoffeeHouse.svg) center / contain no-repeat;
+}
+
+.header__nav {
+  display: flex;
+}
+
+.header__nav--list {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--gap-main);
+}
+
+.header__nav--item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header__nav--link:after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: var(--color-text);
+  transform: scale(0);
+  transition: all 0.3s ease-out;
+  margin-top: 4px;
+}
+
+.header-menu__wrapper {
+  display: flex;
+}
+
+.header-menu__icon {
+  width: 20px;
+  height: 20px;
+  margin-left: 8px;
+  margin-bottom: 2px;
+  background-color: var(--color-text);
+  mask: url(../../images/svg/coffee-cup.svg) center / contain no-repeat;
+}
+
+.header__menu::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: var(--color-text);
+  transform: scale(0);
+  transition: all 0.3s ease-out;
+  margin-top: 4px;
+}
+
+.header__controls {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  width: 8.8rem;
+  height: 4.4rem;
+  padding: 0.4rem;
+  border: 1px solid var(--color-text);
+  border-radius: 10rem;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.theme-toggle__option {
+  position: relative;
+  width: 3.4rem;
+  height: 3.4rem;
+  border-radius: 50%;
+  transition: background-color 0.3s ease-out;
+}
+
+.theme-toggle__option::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 2.2rem;
+  height: 2.2rem;
+  background-color: var(--color-text);
+  mask: url(../../images/svg/sun.svg) center / contain no-repeat;
+  transition: background-color 0.3s ease-out;
+}
+
+.theme-toggle__option--dark::before {
+  width: 1.8rem;
+  height: 1.8rem;
+  mask-image: url(../../images/svg/moon.svg);
+}
+
+.theme-toggle__option--light,
+:root[data-theme="dark"] .theme-toggle__option--dark {
+  background-color: var(--color-accent);
+}
+
+.theme-toggle__option--light::before,
+:root[data-theme="dark"] .theme-toggle__option--dark::before {
+  background-color: var(--color-text-inverse);
+}
+
+:root[data-theme="dark"] .theme-toggle__option--light {
+  background-color: transparent;
+}
+
+:root[data-theme="dark"] .theme-toggle__option--light::before {
+  background-color: var(--color-text);
+}
+
+.burger-menu {
+  display: none;
+}
+
+/* Header hover effects START*/
+
+@media (hover: hover) {
+  .header__logo {
+    cursor: pointer;
+  }
+
+  .header__nav--item:hover .header__nav--link::after {
+    transform: scale(1);
+  }
+
+  .header__menu:hover {
+    cursor: pointer;
+  }
+
+  .header__menu:hover::after {
+    transform: scale(1);
+  }
+
+  .theme-toggle:hover .theme-toggle__option--dark {
+    background-color: var(--color-border-strong);
+  }
+
+  :root[data-theme="dark"] .theme-toggle:hover .theme-toggle__option--light {
+    background-color: var(--color-border);
+  }
+
+  .theme-toggle:hover .theme-toggle__option--dark::before,
+  :root[data-theme="dark"] .theme-toggle:hover .theme-toggle__option--light::before {
+    background-color: var(--color-text-inverse);
+  }
+
+  :root[data-theme="dark"] .theme-toggle:hover .theme-toggle__option--dark {
+    background-color: var(--color-accent);
+  }
+}
+
+@media (hover: none) {
+  .header__nav--item:active .header__nav--link::after {
+    transform: scale(1);
+  }
+
+  .header__menu:active::after {
+    transform: scale(1);
+  }
+}
+
+/* Header hover effects END*/
+
+/* Laptop version of header  */
+
+@media screen and (max-width: 991.98px) {
+  .header__nav--list {
+    gap: var(--gap-small);
+  }
+}
+
+/* Tablet version of header  */
+
+@media screen and (max-width: 768.98px) {
+  .header__nav {
+    position: fixed;
+    top: 9.8rem;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-bg);
+    z-index: 5;
+    padding-top: 6rem;
+    transform: translateX(100%);
+    transition: all 0.8s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .header__nav--active {
+    transform: translateX(0);
+  }
+
+  .header__nav--list {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gap-burger);
+    margin-bottom: 9.2rem;
+  }
+
+  .header__nav--link {
+    font-size: var(--h2-mobile-size);
+    line-height: var(--h2-line-height);
+  }
+
+  .header__menu {
+    display: none;
+  }
+
+  .theme-toggle {
+    width: 10.4rem;
+    height: 5.2rem;
+  }
+
+  .theme-toggle__option {
+    width: 4.2rem;
+    height: 4.2rem;
+  }
+
+  .burger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: 4.4rem;
+    height: 4.4rem;
+    border: 1px solid var(--color-text);
+    border-radius: 50%;
+  }
+
+  .burger-menu__line {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 1.5px;
+    background-color: var(--color-text);
+    transition: all 0.3s ease-out;
+  }
+
+  .hidden {
+    overflow: hidden;
+  }
+
+  .burger-menu__line:first-of-type.active {
+    rotate: 45deg;
+    align-self: center;
+    margin-bottom: -0.95rem;
+  }
+
+  .burger-menu__line:last-of-type.active {
+    rotate: 135deg;
+    align-self: center;
+  }
+}

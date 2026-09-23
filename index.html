@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee-House</title>
+    <script>
+      if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.dataset.theme = "dark";
+      }
+    </script>
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/components/header.css">
+    <link rel="stylesheet" href="./styles/components/footer.css">
+    <link
+      rel="shortcut icon"
+      href="./images/png/favicon.png"
+      type="image/x-icon">
+  </head>
+  <body>
+    <header>
+      <div class="wrapper">
+        <div class="header__wrapper">
+          <div class="header__logo">
+            <a href="./" aria-label="Coffee House, go to the main page">
+              <span class="header__logo--img"></span>
+              <img
+                src="./images/svg/Ellipse.svg"
+                alt=""
+                class="header__logo--circle">
+              <span class="header__logo--text"></span>
+            </a>
+          </div>
+          <nav class="header__nav">
+            <ul class="header__nav--list">
+              <li class="header__nav--item">
+                <a href="#favorites" class="header__nav--link"
+                  >Favorite coffee</a
+                >
+              </li>
+              <li class="header__nav--item">
+                <a href="#about" class="header__nav--link">About</a>
+              </li>
+              <li class="header__nav--item">
+                <a href="#mobile" class="header__nav--link">Mobile app</a>
+              </li>
+              <li class="header__nav--item">
+                <a href="#contacts" class="header__nav--link">Contact us</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="header__controls">
+            <button
+              class="theme-toggle"
+              type="button"
+              aria-label="Toggle dark theme"
+              aria-pressed="false"
+            >
+              <span class="theme-toggle__option theme-toggle__option--light"></span>
+              <span class="theme-toggle__option theme-toggle__option--dark"></span>
+            </button>
+            <div class="header__menu">
+              <div class="header-menu__wrapper">
+                <a href="./menu.html" class="header-menu__link">Menu</a>
+                <span class="header-menu__icon"></span>
+              </div>
+            </div>
+            <div class="burger-menu">
+              <span class="burger-menu__line"></span>
+              <span class="burger-menu__line"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="enjoy" id="enjoy">
+        <div class="wrapper">
+          <div class="enjoy__wrapper">
+            <video class="enjoy-video" autoplay muted loop preload="auto">
+              <source src="./video/hero.webm" type="video/webm">
+            </video>
+            <div class="enjoy__block">
+              <h1 class="enjoy__block--heading">
+                <span class="span">Enjoy </span> premium coffee at our charming
+                cafe
+              </h1>
+              <p class="enjoy__block--paragraph">
+                With its inviting atmosphere and delicious coffee options, the
+                Coffee House Resource is a popular destination for coffee lovers
+                and those seeking a warm and inviting space to enjoy their
+                favorite beverage.
+              </p>
+              <div class="enjoy__block--button">
+                <a href="./menu.html" class="enjoy__block--link">Menu</a>
+                <span class="enjoy-block__icon"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="favorites" id="favorites">
+        <div class="wrapper">
+          <div class="favorites__wrapper">
+            <h2 class="favorites__heading">
+              Choose your <span class="span">favorite </span>coffee
+            </h2>
+            <div class="favorites__slider">
+              <div class="favorites__arrow arrow-prev">
+                <span class="arrow__span--left"></span>
+              </div>
+              <div class="favorites__carousel">
+                <div class="slider-line">
+                  <div class="slider-item slider-item1">
+                    <div class="carousel__image carousel__image1"></div>
+                    <div class="carousel__description">
+                      <h3 class="favorites__description--title">
+                        S&#39;mores Frappuccino
+                      </h3>
+                      <p class="favorites__description--text">
+                        This new drink takes an espresso and mixes it with brown
+                        sugar and cinnamon before being topped with oat milk.
+                      </p>
+                      <p class="favorites__description--price">&#36;5.50</p>
+                    </div>
+                  </div>
+                  <div class="slider-item slider-item2">
+                    <div class="carousel__image carousel__image2"></div>
+                    <div class="carousel__description">
+                      <h3 class="favorites__description--title">
+                        Caramel Macchiato
+                      </h3>
+                      <p class="favorites__description--text">
+                        Fragrant and unique classic espresso with rich
+                        caramel-peanut syrup, with cream under whipped thick
+                        foam.
+                      </p>
+                      <p class="favorites__description--price">&#36;5.00</p>
+                    </div>
+                  </div>
+                  <div class="slider-item slider-item3">
+                    <div class="carousel__image carousel__image3"></div>
+                    <div class="carousel__description">
+                      <h3 class="favorites__description--title">Ice coffee</h3>
+                      <p class="favorites__description--text">
+                        A popular summer drink that tones and invigorates.
+                        Prepared from coffee, milk and ice.
+                      </p>
+                      <p class="favorites__description--price">&#36;4.50</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="favorites__descriptions--controles">
+                  <span class="controls__span"
+                    ><span class="controls__span-double color-active"></span
+                  ></span>
+                  <span class="controls__span"
+                    ><span class="controls__span-double"></span
+                  ></span>
+                  <span class="controls__span"
+                    ><span class="controls__span-double"></span
+                  ></span>
+                </div>
+              </div>
+              <div class="favorites__arrow arrow-next">
+                <span class="arrow__span--right"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="about" id="about">
+        <div class="wrapper">
+          <div class="about__wrapper">
+            <h2 class="about__heading">
+              Resource is
+              <span class="span">the perfect and cozy place </span>where you can
+              enjoy a variety of hot beverages, relax, catch up with friends, or
+              get some work done.
+            </h2>
+            <div class="about__gallery">
+              <div class="about__gallery--item about__gallery--item1">
+                <img
+                  src="./images/jpeg/about-1.jpeg"
+                  alt="drinking coffee alone"
+                  class="about-gallery__image">
+              </div>
+              <div class="about__gallery--item about__gallery--item2">
+                <img
+                  src="./images/jpeg/about-3.jpeg"
+                  alt="drinking coffee alone"
+                  class="about-gallery__image">
+              </div>
+              <div class="about__gallery--item about__gallery--item3">
+                <img
+                  src="./images/jpeg/about-2.jpeg"
+                  alt="drinking coffee alone"
+                  class="about-gallery__image">
+              </div>
+              <div class="about__gallery--item about__gallery--item4">
+                <img
+                  src="./images/jpeg/about-4.jpeg"
+                  alt="drinking coffee alone"
+                  class="about-gallery__image">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="mobile" id="mobile">
+        <div class="wrapper">
+          <div class="mobile__wrapper">
+            <div class="mobile__box--left">
+              <h2 class="mobile__box--heading">
+                <span class="span">Download </span>our apps to start ordering
+              </h2>
+              <p class="mobile__box--paragraph">
+                Download the Resource app today and experience the comfort of
+                ordering your favorite coffee from wherever you are
+              </p>
+              <div class="mobile__box--buttons">
+                <div class="button__mobile">
+                  <span class="button__mobile--apple"></span>
+                  <div class="button__text--wrapper button__text--wrapper1">
+                    <p class="buttons--description">Available on the</p>
+                    <h3 class="buttons--title">App Store</h3>
+                  </div>
+                </div>
+                <div class="button__mobile">
+                  <span class="button__mobile--android"></span>
+                  <div class="button__text--wrapper button__text--wrapper2">
+                    <p class="buttons--description">Available on</p>
+                    <h3 class="buttons--title">Google Play</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mobile__box--right">
+              <img
+                src="./images/png/mobile-screens.png"
+                alt="smartphones"
+                class="mobile-box__image">
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer id="contacts">
+      <div class="wrapper">
+        <div class="footer__wrapper">
+          <div class="footer__wrapper--left">
+            <h2 class="footer__heading">
+              Sip, Savor, Smile.<span class="span"> It&#39;s coffee time!</span>
+            </h2>
+            <div class="footer__links">
+              <a
+                href="https://twitter.com/x"
+                class="footer__links--items footer__links--item1"
+                target="_blank"
+              ></a>
+              <a
+                href="https://www.instagram.com/"
+                class="footer__links--items footer__links--item2"
+                target="_blank"
+              ></a>
+              <a
+                href="https://www.facebook.com/"
+                class="footer__links--items footer__links--item3"
+                target="_blank"
+              ></a>
+            </div>
+          </div>
+          <div class="footer__wrapper--right">
+            <h3 class="footer__contacts--subheading">Contact us</h3>
+            <ul class="footer__contacts--list">
+              <li class="footer-contacts__block">
+                <a
+                  href="https://maps.app.goo.gl/nyrMf2LgFc1mcsVa6"
+                  class="footer__contacts--lines footer__contacts--line1"
+                  target="_blank"
+                  >8558 Green Rd., LA</a
+                >
+              </li>
+              <li class="footer-contacts__block">
+                <a
+                  href="tel:+16035550123"
+                  class="footer__contacts--lines footer__contacts--line2"
+                  >+1 (603) 555-0123</a
+                >
+              </li>
+              <li class="footer-contacts__block">
+                <span class="footer__contacts--lines footer__contacts--line3"
+                  >Mon-Sat: 9:00 AM – 23:00 PM</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="./scripts/theme.js"></script>
+    <script src="./scripts/burger.js"></script>
+  </body>
+</html>

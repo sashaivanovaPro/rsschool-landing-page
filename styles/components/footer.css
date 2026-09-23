@@ -1,0 +1,203 @@
+/* Footer desktop layout */
+
+.footer__wrapper {
+  padding: var(--main-padding);
+  background-color: var(--color-surface);
+  border-radius: 4rem;
+  margin-bottom: var(--main-margin);
+  display: flex;
+  gap: var(--gap-section);
+}
+
+.footer__wrapper--left {
+  max-width: 45.5%;
+}
+
+.footer__heading {
+  color: var(--color-text-inverse);
+  margin-bottom: var(--main-margin);
+  line-height: var(--h2-line-height);
+}
+
+.footer__links--items {
+  position: relative;
+  display: inline-block;
+  width: 5.8rem;
+  height: 5.8rem;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  margin-right: 1rem;
+  transition: all 400ms ease-in-out;
+}
+
+.footer__links--items::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-text-inverse);
+  mask-position: center;
+  mask-repeat: no-repeat;
+  transition: background-color 400ms ease-in-out;
+}
+
+.footer__links--item1::before {
+  mask-image: url(../../images/svg/twitter.svg);
+}
+
+.footer__links--item2::before {
+  mask-image: url(../../images/svg/instagram.svg);
+}
+
+.footer__links--item3::before {
+  mask-image: url(../../images/svg/facebook.svg);
+}
+
+.footer__wrapper--right {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  color: var(--color-text-inverse);
+}
+
+.footer-contacts__block:not(:last-child) {
+  margin-bottom: 1.4rem;
+}
+
+.footer__contacts--subheading {
+  margin-bottom: var(--main-margin);
+  color: var(--color-text-inverse);
+}
+
+.footer__contacts--lines {
+  letter-spacing: 0.2px;
+}
+
+.footer__contacts--lines a {
+  color: var(--color-text-inverse);
+  letter-spacing: 0.2px;
+}
+
+.footer__contacts--lines::before {
+  content: "";
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.8rem;
+}
+
+.footer__contacts--lines {
+  color: var(--color-text-inverse);
+  display: table;
+}
+
+.footer__contacts--line1::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: var(--color-text-inverse);
+  transform: scale(0);
+  transition: all 0.3s ease-out;
+  margin-top: 0.4rem;
+}
+
+.footer__contacts--line1::before {
+  background-color: var(--color-text-inverse);
+  mask: url(../../images/svg/pin-alt.svg) center no-repeat;
+  vertical-align: top;
+}
+
+.footer__contacts--line2::before {
+  background-color: var(--color-text-inverse);
+  mask: url(../../images/svg/phone.svg) center no-repeat;
+  vertical-align: top;
+}
+
+.footer__contacts--line2::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: var(--color-text-inverse);
+  transform: scale(0);
+  transition: all 0.3s ease-out;
+  margin-top: 0.4rem;
+}
+
+.footer__contacts--line3::before {
+  background-color: var(--color-text-inverse);
+  mask: url(../../images/svg/clock.svg) center no-repeat;
+  vertical-align: top;
+  margin-bottom: 0;
+}
+
+/* Laptop version of footer  */
+
+/* Footer hover effects START*/
+
+@media (hover: hover) {
+  .footer__links--items:hover {
+    background-color: var(--color-text-inverse);
+    border-color: var(--color-text-inverse);
+  }
+
+  .footer__links--items:hover::before {
+    background-color: var(--color-surface);
+  }
+
+  .footer__contacts--line1:hover:after {
+    transform: scale(1);
+  }
+  .footer__contacts--line2:hover:after {
+    transform: scale(1);
+  }
+}
+
+@media (hover: none) {
+  .footer__links--items:active {
+    background-color: var(--color-text-inverse);
+    border-color: var(--color-text-inverse);
+  }
+
+  .footer__links--items:active::before {
+    background-color: var(--color-surface);
+  }
+
+  .footer__contacts--line1:active:after {
+    transform: scale(1);
+  }
+  .footer__contacts--line2:active:after {
+    transform: scale(1);
+  }
+}
+
+/* Footer hover effects END*/
+
+/* Tablet version of footer  */
+
+@media screen and (max-width: 768.98px) {
+  .footer__wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: var(--main-padding) var(--tablet-padding);
+    gap: 9.6rem;
+  }
+
+  .footer__wrapper--left {
+    max-width: 100%;
+  }
+
+  .footer__contacts--lines {
+    pointer-events: none;
+  }
+}
+
+/* Mobile version of footer  */
+
+@media (max-width: 425.98px) {
+  .footer__wrapper {
+    padding: 6rem 1.5rem;
+    gap: 3.6rem;
+  }
+}
