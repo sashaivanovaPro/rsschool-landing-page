@@ -1,43 +1,40 @@
 // Burger handler
 
-const burgerItem = document.querySelector(".burger-menu");
+export function initBurger() {
+  const burgerItem = document.querySelector(".burger-menu");
+  const burgerLine = document.querySelectorAll(".burger-menu__line");
+  const menu = document.querySelector(".header__nav");
+  const body = document.querySelector("body");
+  const navLinks = document.querySelectorAll(".header__nav--item");
+  const menuButton = document.querySelector(".header-menu__link");
 
-const burgerLine = document.querySelectorAll(".burger-menu__line");
+  const burgerIconClick = () => {
+    menu.classList.toggle("header__nav--active");
+    body.classList.toggle("hidden");
+    burgerLine.forEach((el) => {
+      el.classList.toggle("active");
+    });
+  };
 
-const MENU = document.querySelector(".header__nav");
+  const linkClick = () => {
+    menu.classList.remove("header__nav--active");
+    body.classList.remove("hidden");
+    burgerLine.forEach((el) => {
+      el.classList.remove("active");
+    });
+  };
 
-const BODY = document.querySelector("body");
-
-const NAVLINKS = document.querySelectorAll(".header__nav--item");
-
-const MENU_BUTTON = document.querySelector(".header-menu__link");
-
-const burgerIconClick = () => {
-  MENU.classList.toggle("header__nav--active");
-  BODY.classList.toggle("hidden");
-  burgerLine.forEach((el) => {
-    el.classList.toggle("active");
+  burgerItem.addEventListener("click", () => {
+    burgerIconClick();
   });
-};
 
-const linkClick = () => {
-  MENU.classList.remove("header__nav--active");
-  BODY.classList.remove("hidden");
-  burgerLine.forEach((el) => {
-    el.classList.remove("active");
+  navLinks.forEach((el) => {
+    el.addEventListener("click", () => {
+      linkClick();
+    });
   });
-};
 
-burgerItem.addEventListener("click", () => {
-  burgerIconClick();
-});
-
-NAVLINKS.forEach((el) => {
-  el.addEventListener("click", () => {
+  menuButton.addEventListener("click", () => {
     linkClick();
   });
-});
-
-MENU_BUTTON.addEventListener("click", () => {
-  linkClick();
-});
+}
