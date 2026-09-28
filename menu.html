@@ -125,6 +125,49 @@
               </div>
             </article>
           </template>
+          <dialog class="product-modal">
+            <div class="product-modal__body">
+              <div class="product-modal__media">
+                <img class="product-modal__image" src="" alt="">
+              </div>
+              <div class="product-modal__content">
+                <h2 class="product-modal__title"></h2>
+                <p class="product-modal__description"></p>
+
+                <div class="product-modal__group">
+                  <p class="product-modal__group-title">Size</p>
+                  <div class="product-modal__options" data-role="sizes"></div>
+                </div>
+
+                <div class="product-modal__group">
+                  <p class="product-modal__group-title">Additives</p>
+                  <div class="product-modal__options" data-role="additives"></div>
+                </div>
+
+                <p class="product-modal__total">
+                  <span>Total:</span>
+                  <span class="product-modal__total-value"></span>
+                </p>
+
+                <p class="product-modal__note">
+                  <span class="product-modal__note-icon"></span>
+                  <span>
+                    The cost is not final. Download our mobile app to see the
+                    final price and place your order. Earn loyalty points and
+                    enjoy your favorite coffee with up to 20% discount.
+                  </span>
+                </p>
+
+                <button type="button" class="product-modal__close">Close</button>
+              </div>
+            </div>
+          </dialog>
+          <template id="product-modal-option-template">
+            <button type="button" class="product-modal__option">
+              <span class="product-modal__option-badge"></span>
+              <span class="product-modal__option-label"></span>
+            </button>
+          </template>
         </div>
       </section>
     </main>

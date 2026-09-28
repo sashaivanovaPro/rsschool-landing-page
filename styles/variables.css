@@ -13,6 +13,7 @@
   --color-backdrop: #403f3dcc;
   --color-border: #c1b6ad;
   --color-border-strong: #665f55;
+  --color-control-active: var(--color-surface);
 
   --main-font-size: 1.6rem;
 
@@ -71,4 +72,5 @@
   --color-backdrop: #292826cc;
   --color-border: #665f55;
   --color-border-strong: #c1b6ad;
+  --color-control-active: #292826;
 }
