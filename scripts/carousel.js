@@ -1,70 +1,38 @@
-// CAROUSEL ANIMATION
+const SLIDER_LINE_SELECTOR = ".slider-line";
+const SLIDE_SELECTOR = ".slider-item";
+const PREV_SELECTOR = ".arrow-prev";
+const NEXT_SELECTOR = ".arrow-next";
+const INDICATOR_SELECTOR = ".controls__span-double";
+const ACTIVE_INDICATOR_CLASS = "color-active";
 
-let offset = 0;
+export function initCarousel() {
+  const sliderLine = document.querySelector(SLIDER_LINE_SELECTOR);
+  const slides = document.querySelectorAll(SLIDE_SELECTOR);
+  const prevButton = document.querySelector(PREV_SELECTOR);
+  const nextButton = document.querySelector(NEXT_SELECTOR);
+  const indicators = document.querySelectorAll(INDICATOR_SELECTOR);
+  const slideCount = slides.length;
 
-const SLIDER_LINE = document.querySelector(".slider-line");
-const NEXT = document.querySelector(".arrow-next");
-const PREV = document.querySelector(".arrow-prev");
+  let currentIndex = 0;
 
-const CAROUSEL = document.querySelector(".favorites__carousel");
-const COFFEE_IMAGES = document.querySelectorAll(".carousel__image");
-const IMAGE_WIDTH = CAROUSEL.offsetWidth;
+  function render() {
+    sliderLine.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-const CONTROLS = document.querySelectorAll(".controls__span-double");
-
-let sliderCount = 0;
-
-// Change image width inside slider according to monitor size
-
-const resizeWindow = COFFEE_IMAGES.forEach((element) => {
-  element.style.width = IMAGE_WIDTH + "px";
-});
-
-CONTROLS[0].classList.add("color-active");
-
-// Change color of controls
-
-const colorChange = () => {
-  CONTROLS.forEach((element) => {
-    element.classList.remove("color-active");
-    element.classList.add("none");
-  });
-  CONTROLS[sliderCount].classList.remove("none");
-  setTimeout(() => {
-    CONTROLS[sliderCount].classList.add("color-active");
-  }, 0.01);
-};
-
-// Swipe images left
-
-const nextSlide = () => {
-  offset += IMAGE_WIDTH;
-  sliderCount += 1;
-  if (offset > IMAGE_WIDTH * 2) {
-    offset = 0;
-    sliderCount = 0;
+    indicators.forEach((indicator, index) => {
+      indicator.classList.toggle(
+        ACTIVE_INDICATOR_CLASS,
+        index === currentIndex,
+      );
+    });
   }
-  SLIDER_LINE.style.left = -offset + "px";
-  colorChange();
-};
 
-NEXT.addEventListener("click", () => {
-  nextSlide();
-  colorChange();
-});
-
-// Swipe images right
-
-const prevSlide = () => {
-  offset -= IMAGE_WIDTH;
-  if (offset < 0) {
-    offset = IMAGE_WIDTH * 2;
+  function goTo(index) {
+    currentIndex = (index + slideCount) % slideCount;
+    render();
   }
-  SLIDER_LINE.style.left = -offset + "px";
-};
 
-PREV.addEventListener("click", () => {
-  prevSlide();
-});
+  nextButton.addEventListener("click", () => goTo(currentIndex + 1));
+  prevButton.addEventListener("click", () => goTo(currentIndex - 1));
 
-const moveCarousel = setInterval(() => nextSlide(), 5000);
+  render();
+}

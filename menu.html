@@ -113,6 +113,61 @@
           <h2 class="menu__category visually-hidden">Coffee menu</h2>
           <div class="menu__gallery"></div>
           <div class="menu-refresh"></div>
+          <template id="menu-card-template">
+            <article class="menu__gallery--item" data-id="">
+              <div class="menu__gallery--image">
+                <img class="menu-gallery__image" src="" alt="">
+              </div>
+              <div class="menu__gallery--description">
+                <h3 class="menu__coffee--title"></h3>
+                <p class="menu__coffee--description"></p>
+                <p class="menu__coffee--price"></p>
+              </div>
+            </article>
+          </template>
+          <dialog class="product-modal">
+            <div class="product-modal__body">
+              <div class="product-modal__media">
+                <img class="product-modal__image" src="" alt="">
+              </div>
+              <div class="product-modal__content">
+                <h2 class="product-modal__title"></h2>
+                <p class="product-modal__description"></p>
+
+                <div class="product-modal__group">
+                  <p class="product-modal__group-title">Size</p>
+                  <div class="product-modal__options" data-role="sizes"></div>
+                </div>
+
+                <div class="product-modal__group">
+                  <p class="product-modal__group-title">Additives</p>
+                  <div class="product-modal__options" data-role="additives"></div>
+                </div>
+
+                <p class="product-modal__total">
+                  <span>Total:</span>
+                  <span class="product-modal__total-value"></span>
+                </p>
+
+                <p class="product-modal__note">
+                  <span class="product-modal__note-icon"></span>
+                  <span>
+                    The cost is not final. Download our mobile app to see the
+                    final price and place your order. Earn loyalty points and
+                    enjoy your favorite coffee with up to 20% discount.
+                  </span>
+                </p>
+
+                <button type="button" class="product-modal__close">Close</button>
+              </div>
+            </div>
+          </dialog>
+          <template id="product-modal-option-template">
+            <button type="button" class="product-modal__option">
+              <span class="product-modal__option-badge"></span>
+              <span class="product-modal__option-label"></span>
+            </button>
+          </template>
         </div>
       </section>
     </main>
@@ -171,8 +226,6 @@
         </div>
       </div>
     </footer>
-    <script src="./scripts/theme.js"></script>
-    <script src="./scripts/burger.js"></script>
-    <script type="module" src="./scripts/products.js"></script>
+    <script type="module" src="./scripts/pages/menu.js"></script>
   </body>
 </html>

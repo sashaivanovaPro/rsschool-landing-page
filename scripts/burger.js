@@ -1,43 +1,51 @@
 // Burger handler
 
-const burgerItem = document.querySelector(".burger-menu");
+const DESKTOP_QUERY = "(min-width: 769px)";
 
-const burgerLine = document.querySelectorAll(".burger-menu__line");
+export function initBurger() {
+  const burgerItem = document.querySelector(".burger-menu");
+  const burgerLine = document.querySelectorAll(".burger-menu__line");
+  const menu = document.querySelector(".header__nav");
+  const body = document.querySelector("body");
+  const navLinks = document.querySelectorAll(".header__nav--item");
+  const menuButton = document.querySelector(".header-menu__link");
+  const desktopQuery = window.matchMedia(DESKTOP_QUERY);
 
-const MENU = document.querySelector(".header__nav");
+  const closeMenu = () => {
+    menu.classList.remove("header__nav--active");
+    body.classList.remove("hidden");
+    burgerLine.forEach((line) => {
+      line.classList.remove("active");
+    });
+  };
 
-const BODY = document.querySelector("body");
+  const toggleMenu = () => {
+    const isOpen = menu.classList.toggle("header__nav--active");
+    body.classList.toggle("hidden", isOpen);
+    burgerLine.forEach((line) => {
+      line.classList.toggle("active", isOpen);
+    });
+  };
 
-const NAVLINKS = document.querySelectorAll(".header__nav--item");
-
-const MENU_BUTTON = document.querySelector(".header-menu__link");
-
-const burgerIconClick = () => {
-  MENU.classList.toggle("header__nav--active");
-  BODY.classList.toggle("hidden");
-  burgerLine.forEach((el) => {
-    el.classList.toggle("active");
+  burgerItem.addEventListener("click", () => {
+    toggleMenu();
   });
-};
 
-const linkClick = () => {
-  MENU.classList.remove("header__nav--active");
-  BODY.classList.remove("hidden");
-  burgerLine.forEach((el) => {
-    el.classList.remove("active");
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      closeMenu();
+    });
   });
-};
 
-burgerItem.addEventListener("click", () => {
-  burgerIconClick();
-});
-
-NAVLINKS.forEach((el) => {
-  el.addEventListener("click", () => {
-    linkClick();
+  menuButton.addEventListener("click", () => {
+    closeMenu();
   });
-});
 
-MENU_BUTTON.addEventListener("click", () => {
-  linkClick();
-});
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeMenu();
+  });
+
+  desktopQuery.addEventListener("change", (event) => {
+    if (event.matches) closeMenu();
+  });
+}
