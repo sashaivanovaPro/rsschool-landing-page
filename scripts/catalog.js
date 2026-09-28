@@ -3,7 +3,15 @@ const GALLERY_SELECTOR = ".menu__gallery";
 const CATEGORY_HEADING_SELECTOR = ".menu__category";
 const CATEGORY_BUTTON_SELECTOR = ".menu__controls--button";
 const CATEGORY_BUTTON_TITLE_SELECTOR = ".menu__controls--title";
+const REFRESH_BUTTON_SELECTOR = ".menu-refresh";
 const ACTIVE_BUTTON_CLASS = "button-active";
+const MOBILE_QUERY = "(max-width: 768px)";
+const CARDS_PER_PAGE = 4;
+
+const state = {
+  category: null,
+  showedCount: CARDS_PER_PAGE,
+};
 
 function createCard(product, index) {
   const template = document.getElementById(CARD_TEMPLATE_ID);
@@ -16,20 +24,20 @@ function createCard(product, index) {
   image.alt = product.name;
 
   card.querySelector(".menu__coffee--title").textContent = product.name;
-  card.querySelector(".menu__coffee--description").textContent = product.description;
+  card.querySelector(".menu__coffee--description").textContent =
+    product.description;
   card.querySelector(".menu__coffee--price").textContent = `$ ${product.price}`;
 
   return card;
 }
 
-function renderCategory(products, category, gallery) {
+function renderCards(items, gallery) {
   gallery.innerHTML = "";
   const fragment = document.createDocumentFragment();
 
-  products.forEach((product, index) => {
-    if (product.category !== category) return;
-    fragment.append(createCard(product, index));
-  });
+  items.forEach(({ product, index }) =>
+    fragment.append(createCard(product, index)),
+  );
 
   gallery.append(fragment);
 }
@@ -40,30 +48,53 @@ function setActiveButton(buttons, activeButton) {
 }
 
 function updateCategoryHeading(heading, activeButton) {
-  const title = activeButton.querySelector(CATEGORY_BUTTON_TITLE_SELECTOR).textContent;
+  const title = activeButton.querySelector(
+    CATEGORY_BUTTON_TITLE_SELECTOR,
+  ).textContent;
   heading.textContent = `${title} menu`;
-}
-
-function selectCategory(products, button, context) {
-  const { buttons, gallery, heading } = context;
-
-  renderCategory(products, button.id, gallery);
-  setActiveButton(buttons, button);
-  updateCategoryHeading(heading, button);
 }
 
 export function initCatalog(products) {
   const gallery = document.querySelector(GALLERY_SELECTOR);
   const heading = document.querySelector(CATEGORY_HEADING_SELECTOR);
   const buttons = document.querySelectorAll(CATEGORY_BUTTON_SELECTOR);
-  const context = { buttons, gallery, heading };
+  const refreshButton = document.querySelector(REFRESH_BUTTON_SELECTOR);
+  const mobileQuery = window.matchMedia(MOBILE_QUERY);
+
+  function render() {
+    const inCategory = products
+      .map((product, index) => ({ product, index }))
+      .filter(({ product }) => product.category === state.category);
+
+    const isMobile = mobileQuery.matches;
+    const visible = isMobile
+      ? inCategory.slice(0, state.showedCount)
+      : inCategory;
+    const hasMore = isMobile && state.showedCount < inCategory.length;
+
+    renderCards(visible, gallery);
+    refreshButton.style.display = hasMore ? "block" : "none";
+  }
+
+  function selectCategory(button) {
+    state.category = button.id;
+    state.showedCount = CARDS_PER_PAGE;
+    setActiveButton(buttons, button);
+    updateCategoryHeading(heading, button);
+    render();
+  }
 
   const [firstButton] = buttons;
-  selectCategory(products, firstButton, context);
+  selectCategory(firstButton);
 
   buttons.forEach((button) => {
-    button.addEventListener("click", () => {
-      selectCategory(products, button, context);
-    });
+    button.addEventListener("click", () => selectCategory(button));
   });
+
+  refreshButton.addEventListener("click", () => {
+    state.showedCount += CARDS_PER_PAGE;
+    render();
+  });
+
+  mobileQuery.addEventListener("change", render);
 }

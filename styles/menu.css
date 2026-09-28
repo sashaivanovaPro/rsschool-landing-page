@@ -164,21 +164,10 @@
   .menu__gallery--item {
     max-width: 31rem;
   }
-
-  .menu__gallery--item:nth-child(5),
-  .menu__gallery--item:nth-child(6) {
-    display: none;
-  }
 }
 
 @media screen and (max-width: 991.98px) {
-  .menu__gallery--item:nth-child(7),
-  .menu__gallery--item:nth-child(8) {
-    display: none;
-  }
-
   .menu-refresh {
-    display: block;
     margin: 0 auto;
     width: 6rem;
     height: 6rem;
