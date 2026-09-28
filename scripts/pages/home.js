@@ -1,7 +1,7 @@
 import { initTheme } from "../theme.js";
 import { initBurger } from "../burger.js";
+import { initCarousel } from "../carousel.js";
 
 initTheme();
 initBurger();
-
-// carousel.js: подключим после рефакторинга
+initCarousel();
